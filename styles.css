@@ -1,0 +1,480 @@
+/* =========================================================
+   1. RESET / BÁSICOS
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* =========================================================
+   2. LAYOUT PRINCIPAL
+   ========================================================= */
+main.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* izquierda / derecha */
+  gap: 24px;
+  align-items: start;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+main.container > div:first-child {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e1e5eb;
+
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+header {
+  background: linear-gradient(135deg, #243447, #1c2733);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+header h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #a8c0d6;
+}
+
+/* Imagen de perfil */
+.rounded-image {
+  border-radius: 100%;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77, #778da9);
+  padding: 5px;
+}
+
+/* =========================================================
+   4. NAVEGACIÓN
+   ========================================================= */
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-top: 12px;
+}
+
+header nav ul li a {
+  color: #a8c0d6;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.18s, color 0.18s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #ffffff;
+  background: rgba(255,255,255,0.06);
+}
+
+header nav ul li a.active::after {
+  content: "";
+  display: block;
+  margin-top: 6px;
+  height: 2px;
+  width: 100%;
+  background: rgba(255,255,255,0.12);
+  border-radius: 2px;
+}
+
+/* Scrollspy */
+header nav a.active {
+  color: #0d6efd;
+}
+header nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -8px;
+  height: 2px;
+  background: #0d6efd;
+  border-radius: 2px;
+}
+
+/* =========================================================
+   5. SECCIONES GENERALES
+   ========================================================= */
+section {
+  background: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+section h2 {
+  font-size: 1.3rem;
+  color: #243447;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e1e5eb;
+  padding-bottom: 0.5rem;
+}
+
+section h3 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #1c2733;
+}
+
+/* Ajuste anclas */
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+/* =========================================================
+   6. INFORMACIÓN PERSONAL
+   ========================================================= */
+.info-list {
+  list-style: none;
+}
+.info-list li {
+  margin-bottom: 0.6rem;
+}
+.info-list a {
+  color: #4fa3f7;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.info-list a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   7. EXPERIENCIA Y EDUCACIÓN
+   ========================================================= */
+.experience-item,
+.education-item {
+  margin-bottom: 1rem;
+}
+
+.experience-item strong,
+.education-item strong {
+  color: #243447;
+  font-size: 1rem;
+}
+
+.education-item a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #4fa3f7;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.education-item a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   8. CERTIFICADOS
+   ========================================================= */
+.certificados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.certificado {
+  text-align: center;
+  background: #fdfdfd;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e1e5eb;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.certificado:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.certificado img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.certificado p {
+  margin: 0.5rem 0;
+  font-weight: 500;
+  color: #243447;
+}
+
+.mini-download {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #4fa3f7;
+  text-decoration: none;
+}
+.mini-download:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   9. LIGHTBOX
+   ========================================================= */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* animación */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.lightbox.show {
+  display: flex;
+  opacity: 1;
+}
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+.lightbox .cerrar,
+.lightbox .anterior,
+.lightbox .siguiente {
+  position: absolute;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.lightbox .cerrar { top: 10px; right: 20px; }
+.lightbox .anterior { left: 20px; top: 50%; transform: translateY(-50%); }
+.lightbox .siguiente { right: 20px; top: 50%; transform: translateY(-50%); }
+
+.download-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: #4fa3f7;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.download-btn:hover {
+  background: #357fd4;
+}
+
+/* =========================================================
+   10. FOOTER
+   ========================================================= */
+.footer {
+  background: #1c2733;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.footer p {
+  margin: 0.3rem 0;
+}
+
+/* =========================================================
+   11. BOTÓN WHATSAPP
+   ========================================================= */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: #25D366;
+  border-radius: 50%;
+  padding: 0.8em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+.whatsapp-button img {
+  width: 2.5em;
+  height: 2.5em;
+  display: block;
+}
+.whatsapp-button:hover {
+  background-color: #128C7E;
+  transform: scale(1.1);
+}
+.hide-whatsapp {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* =========================================================
+   12. RESPONSIVE
+   ========================================================= */
+
+/* ===== Desktop grande (>=1200px) ===== */
+@media (min-width: 1200px) {
+  main.container {
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
+  }
+  main.container > div:first-child {
+    position: sticky;
+    top: 120px;
+  }
+  .whatsapp-button {
+    padding: 1em;
+  }
+  .whatsapp-button img {
+    width: 3em;
+    height: 3em;
+  }
+}
+
+/* ===== Tablets (>=900px y <1200px) ===== */
+@media (min-width: 900px) and (max-width: 1199px) {
+  main.container {
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+  }
+  main.container > div:first-child {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+/* ===== Móviles (<900px) ===== */
+@media (max-width: 899px) {
+  main.container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  main.container > div:first-child {
+    position: relative;
+    top: auto;
+  }
+  section { padding: 14px; }
+  section h2 { font-size: 1.25rem; }
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  header nav ul li a {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  .whatsapp-button {
+    bottom: 15px;
+    right: 15px;
+    padding: 0.6em;
+  }
+  .whatsapp-button img {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+/* =========================================================
+   13. IMPRESIÓN
+   ========================================================= */
+@media print {
+  header, .whatsapp-button, nav, .mini-download, .download-btn, .lightbox {
+    display: none !important;
+  }
+  body { background: #fff; color: #000; }
+  section {
+    box-shadow: none;
+    border: 0;
+    page-break-inside: avoid;
+  }
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 12px;
+    color: #555;
+  }
+}
+/* =========================================================
+   EFECTOS HOVER PARA BOTONES
+   ========================================================= */
+
+/* Botón de descarga en certificados */
+.mini-download:hover,
+.download-btn:hover {
+  background-color: #f0f6fc;   /* fondo azul claro */
+  color: #243447;              /* texto más oscuro */
+  border: 1px solid #4fa3f7;   /* borde azul corporativo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-button:hover {
+  background-color: #128C7E;   /* verde más intenso */
+  border: 2px solid #4fa3f7;   /* borde azul corporativo */
+  transform: scale(1.1);
+}
+/* =========================================================
+   EFECTO HOVER EN TARJETAS (Estilo corporativo con borde azul)
+   ========================================================= */
+section:hover,
+.experience-item:hover,
+.education-item:hover,
+.certificado:hover {
+  background-color: #f0f6fc; /* Azul grisáceo muy claro */
+  border: 1px solid #4fa3f7; /* Borde azul corporativo */
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+

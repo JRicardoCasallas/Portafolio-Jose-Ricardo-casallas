@@ -1,0 +1,15 @@
+# Carpetas de VS Code
+.vscode/
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+*.zip
+*.rar
+
+# Cache de Python (por si algún día agregas scripts)
+__pycache__/
+
+# Dependencias de Node (por si usas npm en el futuro)
+node_modules/
