@@ -14,7 +14,8 @@ La aplicación principal es el archivo **`index.html`**, que sirve como página 
 ## 📁 Estructura del proyecto
 
 HOJA_VIDA_JOSE_RICARDO_CASALLAS/
-│
+
+
 ├── index.html # Página principal de la hoja de vida
 
 ├── styles.css # Estilos del sitio
