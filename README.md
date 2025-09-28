@@ -16,14 +16,21 @@ La aplicación principal es el archivo **`index.html`**, que sirve como página 
 HOJA_VIDA_JOSE_RICARDO_CASALLAS/
 │
 ├── index.html # Página principal de la hoja de vida
+
 ├── styles.css # Estilos del sitio
+
 ├── script.js # Funciones de interacción
+
 ├── .gitignore # Archivos a ignorar por Git
+
 │
 ├── docs/ # Certificados y documentos en PDF
+
 │ └── *.pdf
+
 │
 └── images/ # Imágenes utilizadas en la página
+
 └── *.png, *.jpg, *.jpeg
 
 
